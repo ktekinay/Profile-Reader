@@ -22,4 +22,4 @@ All comments are also welcome.
 
 ##Who Did This?!?
 
-This project was created by and is maintained by Kem Tekinay <ktekinay@mactechnologies dot com>. 
+This project was created by and is maintained by Kem Tekinay (ktekinay@mactechnologies dot com).
