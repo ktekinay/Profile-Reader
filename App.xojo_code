@@ -44,6 +44,15 @@ Inherits Application
 		End Function
 	#tag EndMenuHandler
 
+	#tag MenuHandler
+		Function HelpAbout() As Boolean Handles HelpAbout.Action
+			Wnd_About.Show
+			
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
 
 	#tag Method, Flags = &h1
 		Protected Sub pDocOpenerTimerAction(sender As Timer)
