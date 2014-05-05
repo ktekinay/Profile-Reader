@@ -1,0 +1,8 @@
+2014-05-05 11:55:41
+30
+Main Thread App.Close|1|0|00.00%
+Main Thread App.Open|1|71.00|00.00%
+Main Thread Tmr_PostStartup.Action|1|8640.00|00.03%
+Main Thread Tmr_PostStartup.Action->App.PostStartup|1|8640.00|00.03%
+Main Thread Tmr_PostStartup.Action->App.PostStartup->App.pDoFileOpen|1|8640.00|00.03%
+Thread(31001200) Thd_Tester.Run|1|2015.00|00.01%
