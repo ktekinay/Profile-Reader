@@ -18,14 +18,14 @@ Begin Window Wnd_Main
    MaxWidth        =   32000
    MenuBar         =   1856602461
    MenuBarVisible  =   True
-   MinHeight       =   64
+   MinHeight       =   200
    MinimizeButton  =   True
-   MinWidth        =   64
+   MinWidth        =   820
    Placement       =   0
    Resizeable      =   True
    Title           =   "Profile Reader"
    Visible         =   True
-   Width           =   966
+   Width           =   918
    Begin PRListBox lbProfiles
       AutoDeactivate  =   True
       AutoHideScrollbars=   True
@@ -122,7 +122,7 @@ Begin Window Wnd_Main
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
-      Width           =   754
+      Width           =   706
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
@@ -171,7 +171,7 @@ Begin Window Wnd_Main
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   926
+      Width           =   878
    End
    Begin Timer tmrFixMethodSelection
       Height          =   32
