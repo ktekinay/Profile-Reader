@@ -24,8 +24,6 @@ Inherits ProfileBase
 		  data.MethodIndex = data.MethodIndex + 1
 		  if data.MethodIndex > data.MethodNames.Ubound then return
 		  
-		  zTimeSpentChildren = zTimeSpentChildren + data.TimeSpent
-		  
 		  dim methodName as String = data.MethodNames( data.MethodIndex )
 		  dim m as ProfileMethod
 		  if zMethodsDict.HasKey( methodName ) then
@@ -34,6 +32,8 @@ Inherits ProfileBase
 		  else
 		    m = new ProfileMethod( me, data )
 		    zMethodsDict.Value( methodName ) = m
+		    zTimeSpentChildren = zTimeSpentChildren + data.TimeSpent
+		    zPercentChildren = zPercentChildren + data.PercentOfTotal
 		  end if
 		  
 		  
@@ -76,6 +76,11 @@ Inherits ProfileBase
 
 	#tag ViewBehavior
 		#tag ViewProperty
+			Name="Expanded"
+			Group="Behavior"
+			Type="Boolean"
+		#tag EndViewProperty
+		#tag ViewProperty
 			Name="Index"
 			Visible=true
 			Group="ID"
@@ -94,6 +99,11 @@ Inherits ProfileBase
 			Visible=true
 			Group="ID"
 			Type="String"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Selected"
+			Group="Behavior"
+			Type="Boolean"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"

@@ -32,6 +32,13 @@ Protected Class ProfileBase
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function PercentChildren() As Double
+		  return zPercentChildren
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function PercentOfTotal() As Double
 		  return zPercentOfTotal
 		  
@@ -73,7 +80,6 @@ Protected Class ProfileBase
 	#tag Property, Flags = &h0
 		#tag Note
 			Used to keep track of whether this item is expanded in a ListBox
-			
 		#tag EndNote
 		Expanded As Boolean
 	#tag EndProperty
@@ -123,6 +129,10 @@ Protected Class ProfileBase
 	#tag EndProperty
 
 	#tag Property, Flags = &h1
+		Protected zPercentChildren As Double
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
 		Protected zPercentOfTotal As Double
 	#tag EndProperty
 
@@ -140,6 +150,11 @@ Protected Class ProfileBase
 
 
 	#tag ViewBehavior
+		#tag ViewProperty
+			Name="Expanded"
+			Group="Behavior"
+			Type="Boolean"
+		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Index"
 			Visible=true
@@ -159,6 +174,11 @@ Protected Class ProfileBase
 			Visible=true
 			Group="ID"
 			Type="String"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Selected"
+			Group="Behavior"
+			Type="Boolean"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
