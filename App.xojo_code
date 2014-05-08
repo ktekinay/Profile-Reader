@@ -22,6 +22,7 @@ Inherits Application
 		  dim t as new Thd_Tester
 		  t.Run
 		  
+		  App.AutoQuit = False
 		End Sub
 	#tag EndEvent
 
@@ -30,6 +31,9 @@ Inherits Application
 		  if item <> nil and item.Exists and not item.Directory then
 		    zDocsToOpen.Append item
 		    pGetDocOpenerTimer.Mode = Timer.ModeSingle
+		    #if not TargetMacOS
+		      App.AutoQuit = False
+		    #endif
 		  end if
 		  
 		End Sub
@@ -73,8 +77,14 @@ Inherits Application
 		  
 		  if zDocsToOpen.Ubound <> -1 then
 		    sender.Mode = Timer.ModeSingle
+		    #if not TargetMacOS
+		      App.AutoQuit = False
+		    #endif
 		  else
 		    sender.Mode = Timer.ModeOff
+		    #if not TargetMacOS
+		      App.AutoQuit = True
+		    #endif
 		  end if
 		  
 		End Sub
@@ -88,6 +98,12 @@ Inherits Application
 		  dim f as FolderItem = dlg.ShowModal
 		  if f <> nil then
 		    OpenDocument( f )
+		    
+		    #if not TargetMacOS
+		  else
+		    App.AutoQuit = True
+		    #endif
+		    
 		  end if
 		  
 		End Sub
@@ -187,5 +203,7 @@ Inherits Application
 	#tag EndConstant
 
 
+	#tag ViewBehavior
+	#tag EndViewBehavior
 End Class
 #tag EndClass
