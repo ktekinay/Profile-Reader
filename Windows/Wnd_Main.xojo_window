@@ -646,7 +646,12 @@ End
 		    end if
 		  end if
 		  
-		  dim expandAll as Boolean = Keyboard.OptionKey
+		  dim expandAll as Boolean
+		  #if TargetMacOS or TargetWin32
+		    expandAll = Keyboard.OptionKey
+		  #else
+		    expandAll = Keyboard.ControlKey
+		  #endif
 		  
 		  for i as Integer = 1 to cnt
 		    dim thisMethod as ProfileMethod = methods( i - 1 )
@@ -690,7 +695,13 @@ End
 		Sub CollapseRow(row As Integer)
 		  dim profile as ProfileBase = me.RowTag( row )
 		  
-		  dim collapseAll as Boolean = Keyboard.OptionKey
+		  dim collapseAll as Boolean
+		  #if TargetMacOS or TargetWin32
+		    collapseAll = Keyboard.OptionKey
+		  #else
+		    collapseAll = Keyboard.ControlKey
+		  #endif
+		  
 		  if collapseAll then
 		    dim cnt as Integer = profile.ChildCount
 		    for i as Integer = 1 to cnt
