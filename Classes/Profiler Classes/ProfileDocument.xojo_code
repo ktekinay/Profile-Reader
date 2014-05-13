@@ -65,7 +65,7 @@ Inherits ProfileBase
 		    if match <> nil then
 		      dim profileDate as new Date
 		      profileDate.SQLDateTime = match.SubExpressionString( 1 )
-		      dim secondCount as Integer = match.SubExpressionString( 2 ).Val
+		      dim secondCount as Integer = match.SubExpressionString( 2 ).CDbl
 		      text = match.SubExpressionString( 3 )
 		      
 		      r = new ProfileDocument( doc, profileDate, secondCount, text )
@@ -160,6 +160,11 @@ Inherits ProfileBase
 
 	#tag ViewBehavior
 		#tag ViewProperty
+			Name="Expanded"
+			Group="Behavior"
+			Type="Boolean"
+		#tag EndViewProperty
+		#tag ViewProperty
 			Name="Index"
 			Visible=true
 			Group="ID"
@@ -178,6 +183,11 @@ Inherits ProfileBase
 			Visible=true
 			Group="ID"
 			Type="String"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Selected"
+			Group="Behavior"
+			Type="Boolean"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"

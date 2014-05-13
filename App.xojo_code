@@ -172,6 +172,17 @@ Inherits Application
 	#tag EndMethod
 
 
+	#tag Note, Name = Release Notes
+		1.1:
+		- Added this note.
+		- Reading files is now international-savvy.
+		- Corrected display of percentages.
+		
+		1.0 - 1.0.1:
+		- Initial release.
+	#tag EndNote
+
+
 	#tag Property, Flags = &h1
 		Protected zDocOpenerTimer As Timer
 	#tag EndProperty

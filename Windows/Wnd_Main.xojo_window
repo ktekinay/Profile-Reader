@@ -664,7 +664,7 @@ End
 		    me.Cell( newRow, kColumnCalled ) = Format( thisMethod.TimesCalled, "-#,0" )
 		    me.Cell( newRow, kColumnTimeSpent ) = Format( thisMethod.TimeSpentTotal, "-#,0.00" )
 		    me.Cell( newRow, kColumnAverageTime ) = Format( thisMethod.TimeSpentTotal / thisMethod.TimesCalled, "-#,0.00" )
-		    me.Cell( newRow, kColumnPercent ) = Format( thisMethod.PercentOfTotal, "-##0.00%" )
+		    me.Cell( newRow, kColumnPercent ) = Format( thisMethod.PercentOfTotal, "-##0.00" ) + "%"
 		    
 		    me.RowTag( newRow ) = thisMethod
 		  next
@@ -685,7 +685,7 @@ End
 		  if not profile IsA ProfileThread then
 		    me.Cell( row, kColumnTimeSpent ) = format( profile.TimeSpent, "-#,0.00" )
 		    me.Cell( row, kColumnAverageTime ) = format( profile.TimeSpent / profile.TimesCalled, "-#,0.00" )
-		    me.Cell( row, kColumnPercent ) = format( profile.PercentOfTotal - profile.PercentChildren, "-##0.00%" )
+		    me.Cell( row, kColumnPercent ) = format( profile.PercentOfTotal - profile.PercentChildren, "-##0.00" ) + "%"
 		  end if
 		  
 		  profile.Expanded = True
@@ -706,7 +706,6 @@ End
 		    dim cnt as Integer = profile.ChildCount
 		    for i as Integer = 1 to cnt
 		      dim newRow as Integer =  row + i
-		      dim rowProfile as ProfileBase = me.RowTag( newRow )
 		      me.Expanded( newRow ) = False
 		    next i
 		  end if
