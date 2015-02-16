@@ -59,7 +59,7 @@ Inherits ProfileBase
 		    static rx as RegEx
 		    if rx is nil then
 		      rx = new RegEx
-		      rx.SearchPattern = "(?si-Um)\A(?'date'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\R(?'secs'\d+)\R(?'text'.+)"
+		      rx.SearchPattern = "(?si-Um)\A(?'date'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\R(?'secs'\d+(?:[.,]\d*)?)\R(?'text'.+)"
 		    end if
 		    
 		    dim match as RegExMatch = rx.Search( text )
