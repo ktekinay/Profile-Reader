@@ -51,6 +51,7 @@ Inherits ProfileBase
 		  if tis <> nil then
 		    tis.Encoding = Encodings.UTF8
 		    text = tis.ReadAll
+		    tis.Close
 		    tis = nil
 		    
 		    text = ReplaceLineEndings( text, EndOfLine.UNIX )
